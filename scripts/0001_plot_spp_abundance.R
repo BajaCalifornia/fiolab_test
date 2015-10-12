@@ -10,12 +10,14 @@ library(ggplot2)
 All.abundance.spp<- read.csv("data/spp_abundance.csv")
 head(All.abundance.spp) 
 
+URCHINSAREAWESOME<-All.abundance.spp[All.abundance.spp$Genusspecies=="Centrostephanuscoronatus",]
 
 ## Plot spp abundances ####
 
 limits <- aes(ymax = TotalCounts+ se, ymin=TotalCounts-se)  # create the error bars
 
 ggplot(All.abundance.spp, aes(x=Year, y=TotalCounts, colour=Genusspecies)) + 
+  ggtitle("Species abundances")+
   geom_line(size=.75)+
   geom_point(size = 2)+
   geom_errorbar(limits, width=0.1) +
