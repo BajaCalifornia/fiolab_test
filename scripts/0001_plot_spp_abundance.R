@@ -10,6 +10,7 @@ library(ggplot2)
 All.abundance.spp<- read.csv("data/spp_abundance.csv")
 head(All.abundance.spp) 
 
+URCHINSAREAWESOME<-All.abundance.spp[All.abundance.spp$Genusspecies=="Centrostephanuscoronatus",]
 
 ## Plot spp abundances ####
 
